@@ -7,6 +7,8 @@ const geocode = require('./utils/geocode');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // Define paths for Express config
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath  = path.join(__dirname, '../templates/partials');
@@ -95,6 +97,6 @@ app.get('/*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('The server is up running on port 3000.');
+app.listen(port, () => {
+    console.log(`The server is up running on port ${port}.`);
 })

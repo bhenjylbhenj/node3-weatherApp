@@ -14,7 +14,7 @@ searchForm.addEventListener('submit', (e) => {
 
     msg1.textContent = 'Loading...';
     // console.log(input.value);
-    fetch('http://localhost:3000/weather?location=' + input.value).then((response) => {
+    fetch('/weather?location=' + input.value).then((response) => {
     response.json().then((data) => {
         // console.log(data);
         if (data.error) {
