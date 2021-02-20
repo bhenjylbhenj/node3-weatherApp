@@ -13,6 +13,7 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     msg1.textContent = 'Loading...';
+    msg2.textContent = '';
     // console.log(input.value);
     fetch('/weather?location=' + input.value).then((response) => {
     response.json().then((data) => {
@@ -24,7 +25,6 @@ searchForm.addEventListener('submit', (e) => {
             msg1.textContent = data.forecast;
             msg2.textContent = data.location;
         }
-
         input.value = '';
     });
 })
